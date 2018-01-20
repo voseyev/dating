@@ -1,13 +1,43 @@
-.h1 {
-    color: blue;
-    font-size: 20px;
+#h1, #h3 {
+    padding-right: 100px;
+    padding-left: 150px;
 }
 
-.img {
+#para {
+    padding-right: 50px;
+}
+
+#img {
     width: 400px;
     height: auto;
+    float: right;
+    padding: 0 20px 20px 0;
+
 }
 
 .container {
+    border-style: solid;
+    border-color: lightgrey;
+    height: 500px;
+}
 
+#top {
+    border-top-color: lightgrey;
+    border-top-style: solid;
+}
+#bottom {
+    border-bottom-color: lightgrey;
+    border-bottom-style: solid;
+}
+
+.italic {
+    font-style: italic;
+    padding-right: 70px;
+    padding-left: 100px;
+}
+
+.btn {
+    margin-left: 250px;
+    height: 50px;
+    width: 150px;
 }
