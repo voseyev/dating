@@ -1,6 +1,10 @@
-#h1, #h3 {
+#h1{
     padding-right: 100px;
-    padding-left: 150px;
+    padding-left: 170px;
+}
+
+#h3 {
+    padding-left: 100px;
 }
 
 #para {
@@ -22,12 +26,16 @@
 }
 
 #top {
-    border-top-color: lightgrey;
+    margin-left: 40px;
+    border-top-color: lightsteelblue;
     border-top-style: solid;
+    width: 650px;
 }
 #bottom {
-    border-bottom-color: lightgrey;
+    margin-left: 40px;
+    border-bottom-color: lightsteelblue;
     border-bottom-style: solid;
+    width: 650px;
 }
 
 .italic {
@@ -37,6 +45,7 @@
 }
 
 .btn {
+    margin-top: 30px;
     margin-left: 250px;
     height: 50px;
     width: 150px;
