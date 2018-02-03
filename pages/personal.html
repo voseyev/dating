@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 
+<!-- Created by PhpStorm.
+* User: Vlad
+* Date: 1/29/2018
+* This is where the user inputs personal information -->
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -8,22 +13,99 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
-<div class="container">
-    <form action="" method="post">
-    <h1 id="h1"><b>Personal Information</b></h1>
+<nav class="navbar">
+    <h3 class="navbar-text">My Dating Website</h3>
+</nav>
 
-    <p id="para">Welcome to the web's most successful dating website.
-        <b>At My Dating Website</b> you'll meet another like minded individual.
-        We have the highest success rate of couples on the web.
-        User's are matched by interest and location.
-        Find out why so many others have found love on our site!</p><br>
+<form action="profile" class="container">
+    <fieldset>
 
-    <button type="button" class="btn btn-primary">Create a Profile!</button>
-    </form>
-</div>
+        <h1>Personal Information</h1>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h5><b>First Name</b></h5>
+                <check if="{{ isset(@invalidFirstName) }}">
+                    <span class="error font-weight-normal"> - Please enter a valid first name</span>
+                </check>
+                <input id="first_name" name="first_name" type="text" placeholder="First Name" class="form-control input-md" required="">
+                <check if="{{ isset(@firstName) }}">
+                    value="{{ @firstName }}"
+                </check></br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h5><b>Last Name</b></h5>
+                <check if="{{ isset(@invalidLastName) }}">
+                    <span class="error font-weight-normal"> - Please enter a valid last name</span>
+                </check>
+                <input id="last_name" name="last_name" type="text" placeholder="Last Name" class="form-control input-md" required="">
+                <check if="{{ isset(@lastName) }}">
+                    value="{{ @lastName }}"
+                </check></br>
+            </div>
+            <div class="col-md-4">
+                <p id="note"><span ><b>Note:</b></span> All information entered is protected by our
+                    <span id="policy">privacy policy</span>. Profile information can only be viewed by
+                    others with your permission.</p>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h5><b>Age</b></h5>
+                <check if="{{ isset(@invalidAge) }}">
+                    <span class="error font-weight-normal"> - You must be 18 or older</span>
+                </check>
+                <input id="age" name="age" type="text" placeholder="Age" class="form-control input-md" required="">
+                <check if="{{ isset(@age) }}">
+                    value="{{ @age }}"
+                </check></br>
+            </div>
+        </div >
+
+
+            <form>
+                <h5><b>Gender</b></h5>
+                <label class="radio-inline">
+                    <input type="radio" name="gender">Male
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="gender">Female
+                </label>
+            </form>
+
+        <div class="row">
+            <div class="col-md-7">
+                <h5><b>Phone Number</b></h5>
+                <check if="{{ isset(@invalidPhone) }}">
+                    <span class="error font-weight-normal"> - Please enter a valid phone number</span>
+                </check>
+                <input id="phone" name="phone" type="text" placeholder="Phone Number" class="form-control input-md" required="">
+                <check if="{{ isset(@phone) }}">
+                    value="{{ @phone }}"
+                </check></br>
+
+            </div>
+
+            <div class="col-md-2">
+                <button type="button" class="btn btn-primary">Next ></button>
+            </div>
+        </div >
+
+
+
+
+    </fieldset>
+</form>
+
 
 </body>
 </html>
