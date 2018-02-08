@@ -21,34 +21,35 @@
     <h3 class="navbar-text">My Dating Website</h3>
 </nav>
 
-<form action="profile" class="container">
-    <fieldset>
+<form action="profile" method="post" class="container">
 
         <h1>Personal Information</h1>
 
         <div class="row">
             <div class="col-md-8">
-                <h5><b>First Name</b></h5>
-                <check if="{{ isset(@invalidFirstName) }}">
-                    <span class="error font-weight-normal"> - Please enter a valid first name</span>
-                </check>
-                <input id="first_name" name="first_name" type="text" placeholder="First Name" class="form-control input-md" required="">
-                <check if="{{ isset(@firstName) }}">
-                    value="{{ @firstName }}"
-                </check></br>
+                <label for="first_name" class="font-weight-bold">First Name
+                    <check if="{{ isset(@invalidFirst) }}">
+                        <span class="error">  Please enter a valid first name</span>
+                    </check>
+                </label>
+                <input id="first_name" name="first_name" type="text" placeholder="First Name" class="form-control input-md"
+                <check if="{{ isset(@first_name) }}">
+                    value="{{ @first_name }}"
+                </check>>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-8">
-                <h5><b>Last Name</b></h5>
-                <check if="{{ isset(@invalidLastName) }}">
-                    <span class="error font-weight-normal"> - Please enter a valid last name</span>
-                </check>
-                <input id="last_name" name="last_name" type="text" placeholder="Last Name" class="form-control input-md" required="">
-                <check if="{{ isset(@lastName) }}">
-                    value="{{ @lastName }}"
-                </check></br>
+                <label for="last_name" class="font-weight-bold">Last Name
+                    <check if="{{ isset(@invalidLast) }}">
+                        <span class="error"> Please enter a valid last name</span>
+                    </check>
+                </label>
+                <input class="form-control" type="text" placeholder="Last Name" id="last_name" name="last_name"
+                <check if="{{ isset(@last_name) }}">
+                    value="{{ @last_name }}"
+                </check>></br>
             </div>
             <div class="col-md-4">
                 <p id="note"><span ><b>Note:</b></span> All information entered is protected by our
@@ -60,50 +61,45 @@
 
         <div class="row">
             <div class="col-md-8">
-                <h5><b>Age</b></h5>
-                <check if="{{ isset(@invalidAge) }}">
-                    <span class="error font-weight-normal"> - You must be 18 or older</span>
-                </check>
-                <input id="age" name="age" type="text" placeholder="Age" class="form-control input-md" required="">
+                <label for="age" class="font-weight-bold">Age
+                    <check if="{{ isset(@invalidAge) }}">
+                        <span class="error"> You must be 18 or older</span>
+                    </check>
+                </label>
+                <input class="form-control" type="text" id="age" name="age" placeholder="Age"
                 <check if="{{ isset(@age) }}">
                     value="{{ @age }}"
-                </check></br>
+                </check>></br>
             </div>
         </div >
 
 
-            <form>
                 <h5><b>Gender</b></h5>
                 <label class="radio-inline">
-                    <input type="radio" name="gender">Male
+                    <input type="radio" name="gender" value="male" <check if="{{ @gender == male }}">checked="checked"</check>> Male</label>
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="gender">Female
+                    <input type="radio" name="gender" value="female" <check if="{{ @gender == female }}">checked="checked"</check>> Female</label>
                 </label>
-            </form>
 
         <div class="row">
             <div class="col-md-7">
-                <h5><b>Phone Number</b></h5>
-                <check if="{{ isset(@invalidPhone) }}">
-                    <span class="error font-weight-normal"> - Please enter a valid phone number</span>
-                </check>
-                <input id="phone" name="phone" type="text" placeholder="Phone Number" class="form-control input-md" required="">
+                <label for="phone" class="font-weight-bold">Phone Number
+                    <check if="{{ isset(@invalidPhone) }}">
+                        <span class="error"> Please enter a valid phone number</span>
+                    </check>
+                </label>
+                <input class="form-control" type="text" id="phone" name="phone" placeholder="Phone Number"
                 <check if="{{ isset(@phone) }}">
                     value="{{ @phone }}"
-                </check></br>
+                </check>></br>
 
             </div>
 
-            <div class="col-md-2">
-                <button type="button" class="btn btn-primary">Next ></button>
+            <div class="col-md-12">
+                <button type="submit" name="submit" value="submit" class="btn btn-primary pull-right">Next ></button>
             </div>
         </div >
-
-
-
-
-    </fieldset>
 </form>
 
 

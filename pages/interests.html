@@ -22,10 +22,9 @@
     <h3 class="navbar-text">My Dating Website</h3>
 </nav>
 
-<form class="container">
+<form class="container" action="summary" method="post">
 
         <h1>Interests</h1>
-        <form action="summary" method="post">
             <h5><b>In-door Interests</b></h5>
             <div class="row">
                 <div class="col-md-3">
@@ -33,42 +32,40 @@
                     <input type="checkbox" name="indoors[]" value="puzzles"> Puzzles
                 </div>
                 <div class="col-md-3">
-                    <input type="checkbox" name="indoors[]" value="tv"> Movies</br>
-                    <input type="checkbox" name="indoors[]" value="puzzles"> Reading
+                    <input type="checkbox" name="indoors[]" value="movies"> Movies</br>
+                    <input type="checkbox" name="indoors[]" value="reading"> Reading
                 </div>
                 <div class="col-md-3">
-                    <input type="checkbox" name="indoors[]" value="tv"> Cooking</br>
-                    <input type="checkbox" name="indoors[]" value="puzzles"> Playing Cards
+                    <input type="checkbox" name="indoors[]" value="cooking"> Cooking</br>
+                    <input type="checkbox" name="indoors[]" value="playingcards"> Playing Cards
                 </div>
                 <div class="col-md-3">
-                    <input type="checkbox" name="indoors[]" value="tv"> Board Games</br>
-                    <input type="checkbox" name="indoors[]" value="puzzles"> Video Games
+                    <input type="checkbox" name="indoors[]" value="boardgames"> Board Games</br>
+                    <input type="checkbox" name="indoors[]" value="videogames"> Video Games
                 </div>
             </div>
 
                 <h5><b>Out-door Interests</b></h5>
                 <div class="row">
                     <div class="col-md-3">
-                        <input type="checkbox" name="indoors[]" value="tv"> Hiking</br>
-                        <input type="checkbox" name="indoors[]" value="puzzles"> Walking
+                        <input type="checkbox" name="outdoors[]" value="hiking"> Hiking</br>
+                        <input type="checkbox" name="outdoors[]" value="walking"> Walking
                     </div>
                     <div class="col-md-3">
-                        <input type="checkbox" name="indoors[]" value="tv"> Biking</br>
-                        <input type="checkbox" name="indoors[]" value="puzzles"> Climbing
+                        <input type="checkbox" name="outdoors[]" value="biking"> Biking</br>
+                        <input type="checkbox" name="outdoors[]" value="climbing"> Climbing
                     </div>
                     <div class="col-md-3">
-                        <input type="checkbox" name="indoors[]" value="tv"> Swimming</br>
+                        <input type="checkbox" name="outdoors[]" value="swimming"> Swimming</br>
                     </div>
                     <div class="col-md-3">
-                        <input type="checkbox" name="indoors[]" value="tv"> Collecting</br>
+                        <input type="checkbox" name="outdoors[]" value="collecting"> Collecting</br>
                     </div>
             </div>
-            <div>
-                <button type="submit" name="submit" value="submit" class="btn btn-primary pull-right" id="button">Next ></button>
+            <div class="col-md-12">
+                <button type="submit" name="submit" value="submit" class="btn btn-primary pull-right">Next ></button>
             </div>
         </form>
-</form>
-
 
 </body>
 </html>
