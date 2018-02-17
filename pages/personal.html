@@ -36,6 +36,7 @@
                 <check if="{{ isset(@first_name) }}">
                     value="{{ @first_name }}"
                 </check>>
+                <br>
             </div>
         </div>
 
@@ -93,12 +94,22 @@
                 <check if="{{ isset(@phone) }}">
                     value="{{ @phone }}"
                 </check>></br>
+            </div>
+        </div>
 
+            <div class="row">
+                <div class="col-md-11">
+                    <label for="premium" class="font-weight-bold">
+                        Premium Membership
+                    </label>
+                    <br>
+                    <input type="checkbox" name="premium" value="premium" id="premium"> Sign me up for a Premium Account!</br>
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" name="submit" value="submit" class="btn btn-primary ">Next ></button>
+                </div>
             </div>
 
-            <div class="col-md-12">
-                <button type="submit" name="submit" value="submit" class="btn btn-primary pull-right">Next ></button>
-            </div>
         </div >
 </form>
 
