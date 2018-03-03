@@ -12,6 +12,10 @@ session_start();
 //create an instance of the base class
 $f3 = Base::instance();
 
+//connect to database
+$dbh = new functions();
+$_SESSION['dbh'] = $dbh;
+
 $f3->set('states', array('Washington', 'Oregon', 'Idaho'));
 
 //define a default route
@@ -102,6 +106,8 @@ $f3->route('GET|POST /interests', function($f3){
     if(isset($_SESSION['premium'])) {
         echo $template->render('pages/interests.html');
     } else {
+        $dbh = $_SESSION['dbh'];
+        $dbh->addMember($member);
         echo $template->render('pages/summary.html');
     }
 
@@ -128,9 +134,20 @@ $f3->route('GET|POST /summary', function($f3){
         $f3->set('premium', $_SESSION['premium']);
         $f3->set('indoors', $_SESSION['indoors']);
         $f3->set('outdoors', $_SESSION['outdoors']);
+
+        $dbh = $_SESSION['dbh'];
+        $dbh->addMember($member);
+
         echo $template->render('pages/summary.html');
     }
 });
+
+$f3->route('GET|POST /admin', function($f3) {
+        $template = new Template();
+        $members = functions::getMembers();
+        $f3->set('members', $members);
+        echo $template->render('pages/admin.html');
+ });
 
 $f3->run();
 
