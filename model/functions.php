@@ -9,6 +9,22 @@
 
 require("config.php");
 
+/*
+ * member_id primary key int(11) Auto_Increment
+ * fname varchar(45)	latin1_swedish_ci		No	None
+ * lname varchar(45)	latin1_swedish_ci		No	None
+ * age int(2)                                   Yes Null
+ * gender varchar(10)	latin1_swedish_ci		Yes	Null
+ * phone gender int(11)	latin1_swedish_ci		Yes	Null
+ * gender varchar(45)	latin1_swedish_ci		Yes Null
+ * state varchar(45)	latin1_swedish_ci		Yes	Null
+ * seeking varchar(15)	latin1_swedish_ci		Yes	Null
+ * bio text	            latin1_swedish_ci       Yes	Null
+ * premium tinyint(1)	latin1_swedish_ci		Yes	Null
+ * image varchar(45)	latin1_swedish_ci		Yes	None
+ * interests varchar(100)	latin1_swedish_ci	Yes	Null
+ */
+
 class functions
 {
     public static function connect()
