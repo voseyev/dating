@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles/styles.css">
+
+
+</head>
+<body>
+<include href="pages/navbar.html" />
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center pb-3">Current Members</h2>
+
+            <table id="members" class="table table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>State</th>
+                    <th>Gender</th>
+                    <th>Seeking</th>
+                    <th>Premium Member</th>
+                    <th>Interests</th>
+                </tr>
+                </thead>
+                <tbody>
+                <repeat group="{{ @members }}" value="{{ @member }}">
+                    <tr onclick="routeTo({{ @member['member_id'] }})">
+                        <td>{{ @member['member_id'] }}</td>
+                        <td>{{ @member['fname'] }} {{ @member['lname'] }}</td>
+                        <td>{{ @member['age'] }}</td>
+                        <td>{{ @member['phone'] }}</td>
+                        <td>{{ @member['email'] }}</td>
+                        <td>{{ @member['state'] }}</td>
+                        <td>{{ @member['gender'] }}</td>
+                        <td>{{ @member['seeking'] }}</td>
+                        <td>
+                            <check if="{{ @member['premium'] == 'on' }}">
+                                <true>
+                                    <input type="checkbox" checked disabled>
+                                </true>
+                                <false>
+                                    <input type="checkbox" disabled>
+                                </false>
+                            </check>
+                        </td>
+                        <td>{{ @member['interests'] }}</td>
+                    </tr>
+                </repeat>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
